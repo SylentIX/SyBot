@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
 const moment = require('moment');
 let timestamp;
 
