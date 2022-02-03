@@ -1,6 +1,6 @@
 const Event = require('../structures/Event');
 const db = require('better-sqlite3')('./database.db');
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 module.exports = class extends Event {
 

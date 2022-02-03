@@ -1,7 +1,7 @@
 const Command = require('../../structures/Command');
 const { MessageEmbed } = require('discord.js');
 const colors = require('../../colors.json');
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 module.exports = class extends Command {
 
