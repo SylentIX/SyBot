@@ -1,4 +1,3 @@
-import chalk from 'chalk';
 const moment = require('moment');
 let timestamp;
 
@@ -13,29 +12,29 @@ module.exports = class Logger {
 	}
 
 	log(content, type = 'log') {
-		console.log(`${timestamp} ${chalk.bgBlue(type.toUpperCase())} ${content}`);	
+		console.log(`${timestamp} ${content}`);	
 	}
 
 	warn(content, type = 'warn') {
-		return console.log(`${timestamp} ${chalk.black.bgYellow(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	info(content, type = 'info') {
-		return console.log(`${timestamp} ${chalk.cyan(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	report(user, value, type) {
 		if (type === 'xp') {
-			return console.log(`${timestamp} ${chalk.cyan(type.toUpperCase())} [${chalk.cyan(value)}] - ${user}`);
+			return console.log(`${timestamp} ${value} - ${user}`);
 		};
 		if (type === 'lvl') {
-			return console.log(`${timestamp} ${chalk.cyan(type.toUpperCase())} [${chalk.cyan(value)}] - ${user}`);
+			return console.log(`${timestamp} ${value} - ${user}`);
 		};
 		if (type === 'coins') {
-			return console.log(`${timestamp} ${chalk.cyan(type.toUpperCase())} [${chalk.cyan(value)}] - ${user}`);
+			return console.log(`${timestamp} ${value} - ${user}`);
 		};
 		if (type === 'gems') {
-			return console.log(`${timestamp} ${chalk.cyan(type.toUpperCase())} [${chalk.cyan(value)}] - ${user}`);
+			return console.log(`${timestamp} ${value} - ${user}`);
 		};
 	}
 
