@@ -1,0 +1,6 @@
+config.json
+launch.bat
+launch.ahk
+database.db
+package-lock.json
+node_modules
