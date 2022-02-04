@@ -39,23 +39,23 @@ module.exports = class Logger {
 	}
 
 	error(content, type = 'error') {
-		return console.log(`${timestamp} ${chalk.bgRed(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	debug(content, type = 'debug') {
-		return console.log(`${timestamp} ${chalk.green(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	cmd(content, type = 'cmd') {
-		return console.log(`${timestamp} ${chalk.black.bgWhite(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	panel(content, type = 'panel') {
-		return console.log(`${timestamp} ${chalk.black.bgCyan(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 	ready(content, type = 'ready') {
-		return console.log(`${timestamp} ${chalk.black.bgGreen(type.toUpperCase())} ${content}`);
+		return console.log(`${timestamp} ${content}`);
 	}
 
 }

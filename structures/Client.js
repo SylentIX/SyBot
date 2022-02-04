@@ -1,16 +1,19 @@
 const Utils = require('./Utils.js');
 const Logger = require('./Logger.js');
 const Database = require('./Database.js');
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, Intents } = require('discord.js');
 const keepAlive = require('../server.js');
 
-module.exports = class RaeClient extends Client {
+module.exports = class SyBot extends Client {
 
 	constructor(options = {}) {
+
 		super({
-			disableMentions: 'everyone'
+			disableMentions: 'everyone',
+			intents: [Intents.FLAGS.GUILDS]
 		});
-		this.validate(options);
+
+		this._validateOptions();
 
 		this.commands = new Collection();
 
@@ -24,19 +27,12 @@ module.exports = class RaeClient extends Client {
 
 		this.database = new Database(this);
 
-		this.owner = options.owner;
-		
-	}
-
-	validate(options) {
-		if (typeof options !== 'object') throw new TypeError('Options should be a type of Object.');
-
-		if (!options.token) throw new Error('You must pass the token for the client.');
 		this.token = options.token;
 
-		if (!options.prefix) throw new Error('You must pass a prefix for the client.');
-		if (typeof options.prefix !== 'string') throw new TypeError('Prefix should be a type of String.');
 		this.prefix = options.prefix;
+
+		this.owner = options.owner;
+
 	}
 
 	async launch(token = this.token) {
